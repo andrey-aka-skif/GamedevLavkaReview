@@ -20,7 +20,8 @@ public class ResourcesListUI : MonoBehaviour
 
     private void OnResourceChange(string key, object resource, int amount)
     {
-        _resourcesListUI[key].SetAmount(amount);
+        if (_resourcesListUI.ContainsKey(key))
+            _resourcesListUI[key].SetAmount(amount);
     }
 
     private void AddItems()
